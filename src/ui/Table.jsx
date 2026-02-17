@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useCabins } from "../features/cabins/useCabins";
 import { createContext, useContext } from "react";
 
 const StyledTable = styled.div`
