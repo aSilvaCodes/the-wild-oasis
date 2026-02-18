@@ -1,4 +1,4 @@
-import { cloneElement, createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import { HiEllipsisVertical } from "react-icons/hi2";
 import styled from "styled-components";
@@ -88,17 +88,12 @@ function Toggle({ id }) {
 
   function handleClick(e) {
     const rect = e.target.closest("button").getBoundingClientRect();
-    //console.log(rect);
-    console.log(window.innerWidth, rect.width, rect.x);
     setPosition({
       x: window.innerWidth - rect.width - rect.x,
       y: rect.y + rect.height + 8,
     });
 
     openMenuId === id ? close() : open(id);
-
-    // Jonas' logic
-    // openMenuId === "" || openMenuId !== id ? open(id) : close();
   }
 
   return (
